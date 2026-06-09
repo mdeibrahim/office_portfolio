@@ -58,7 +58,7 @@ function ProjectCard({
       overflow-hidden
       rounded-3xl
       border border-white/10
-      bg-white/[0.03]
+      bg-white/3
       backdrop-blur-xl
       transition-all
       duration-500
@@ -74,7 +74,7 @@ function ProjectCard({
         flex
         items-center
         justify-center
-        bg-gradient-to-br
+        bg-linear-to-br
         from-violet-500/10
         via-cyan-500/5
         to-transparent
@@ -213,7 +213,7 @@ export default function Portfolio() {
                 <span
                   className="
               block
-              bg-gradient-to-r
+              bg-linear-to-r
               from-violet-400
               via-cyan-400
               to-violet-400

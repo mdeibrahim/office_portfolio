@@ -48,7 +48,7 @@ export default function Contact() {
             <span
               className="
               block
-              bg-gradient-to-r
+              bg-linear-to-r
               from-violet-400
               via-cyan-400
               to-violet-400
@@ -75,7 +75,7 @@ export default function Contact() {
             className="
             rounded-3xl
             border border-white/10
-            bg-white/[0.03]
+            bg-white/3
             backdrop-blur-xl
             p-8
           "
@@ -98,7 +98,7 @@ export default function Contact() {
                   className="
                   w-12 h-12
                   rounded-xl
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-violet-600
                   to-cyan-500
                   flex items-center justify-center
@@ -122,7 +122,7 @@ export default function Contact() {
                   className="
                   w-12 h-12
                   rounded-xl
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-violet-600
                   to-cyan-500
                   flex items-center justify-center
@@ -146,7 +146,7 @@ export default function Contact() {
                   className="
                   w-12 h-12
                   rounded-xl
-                  bg-gradient-to-br
+                  bg-linear-to-br
                   from-violet-600
                   to-cyan-500
                   flex items-center justify-center
@@ -174,7 +174,7 @@ export default function Contact() {
             className="
             rounded-3xl
             border border-white/10
-            bg-white/[0.03]
+            bg-white/3
             backdrop-blur-xl
             p-8
           "
@@ -278,7 +278,7 @@ export default function Contact() {
                   gap-2
                   py-4
                   rounded-xl
-                  bg-gradient-to-r
+                  bg-linear-to-r
                   from-violet-600
                   to-cyan-500
                   text-white

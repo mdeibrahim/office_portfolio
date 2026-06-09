@@ -65,19 +65,19 @@ function ServiceCard() {
     //   </div>
     // </div>
 
-    <MagicBento 
-  textAutoHide={true}
-  enableStars
-  enableSpotlight
-  enableBorderGlow={true}
-  enableTilt={true}
-  enableMagnetism={false}
-  clickEffect
-  spotlightRadius={700}
-  particleCount={50}
-  glowColor="132, 0, 255"
-  disableAnimations={false}
-/>
+    <MagicBento
+      textAutoHide={true}
+      enableStars
+      enableSpotlight
+      enableBorderGlow={true}
+      enableTilt={true}
+      enableMagnetism={false}
+      clickEffect
+      spotlightRadius={700}
+      particleCount={50}
+      glowColor="132, 0, 255"
+      disableAnimations={false}
+    />
 
   );
 }
@@ -125,7 +125,7 @@ export default function Service() {
             <span
               className="
               block
-              bg-gradient-to-r
+              bg-linear-to-r
               from-violet-400
               via-cyan-400
               to-violet-400

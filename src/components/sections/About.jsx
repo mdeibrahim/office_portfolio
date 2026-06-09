@@ -45,11 +45,11 @@ const techLogos = [
 ];
 
 // Alternative with image sources
-const imageLogos = [
-  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
-  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
-  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
-];
+// const imageLogos = [
+//   { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+//   { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+//   { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+// ];
 
 export default function About() {
   return (
@@ -273,8 +273,8 @@ export default function About() {
           />
         </div>
       </section>
-      <section>
-        <div style={{ padding: '115px', height: '200px', position: 'relative', overflow: 'hidden' }}>
+      <section style={{ padding: '115px', height: '200px', position: 'relative', overflow: 'hidden' }}>
+        
           {/* Basic horizontal loop */}
           <LogoLoop
             logos={techLogos}
@@ -295,7 +295,7 @@ export default function About() {
             logos={techLogos}
             useCustomRender={false}
           /> */}
-        </div>
+        
       </section>
     </section>
   );
