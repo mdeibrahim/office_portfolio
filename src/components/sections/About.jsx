@@ -7,6 +7,9 @@ import {
 import CircularGallery from '../common/CircularGallery';
 import StaticNetworkBG from "../../assets/images/Nav/image.png";
 
+import LogoLoop from '../common/LogoLoop';
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss } from 'react-icons/si';
+
 
 const highlights = [
   "Experienced Software Engineers",
@@ -33,23 +36,38 @@ const stats = [
   },
 ];
 
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+];
+
+// Alternative with image sources
+const imageLogos = [
+  { src: "/logos/company1.png", alt: "Company 1", href: "https://company1.com" },
+  { src: "/logos/company2.png", alt: "Company 2", href: "https://company2.com" },
+  { src: "/logos/company3.png", alt: "Company 3", href: "https://company3.com" },
+];
+
 export default function About() {
   return (
     <section id="about" className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
             bg-no-repeat bg-blend-overlay bg-[#020132]"
-          style={{ backgroundImage: `url(${StaticNetworkBG})` }}>
-    <section
-      className="relative px-6 lg:px-8"
-    >
-      <div className="max-w-7xl mx-auto">
+      style={{ backgroundImage: `url(${StaticNetworkBG})` }}>
+      <section
+        className="relative px-6 lg:px-8"
+      >
+        <div className="max-w-7xl mx-auto">
 
-        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
 
-          {/* Left Content */}
-          <div>
+            {/* Left Content */}
+            <div>
 
-            <span
-              className="
+              <span
+                className="
               inline-flex
               px-4 py-2
               rounded-full
@@ -59,12 +77,12 @@ export default function About() {
               text-sm
               font-medium
             "
-            >
-              About Us
-            </span>
+              >
+                About Us
+              </span>
 
-            <h2
-              className="
+              <h2
+                className="
               mt-6
               text-4xl
               md:text-6xl
@@ -72,10 +90,10 @@ export default function About() {
               text-white
               leading-tight
             "
-            >
-              We Build
-              <span
-                className="
+              >
+                We Build
+                <span
+                  className="
                 block
                 bg-linear-to-r
                 from-violet-400
@@ -84,64 +102,64 @@ export default function About() {
                 bg-clip-text
                 text-transparent
               "
-              >
-                Digital Experiences
-              </span>
-            </h2>
+                >
+                  Digital Experiences
+                </span>
+              </h2>
 
-            <p
-              className="
+              <p
+                className="
               mt-8
               text-lg
               text-white/60
               leading-relaxed
             "
-            >
-              We are a passionate software development
-              company helping startups, businesses,
-              and enterprises transform ideas into
-              scalable digital products.
-            </p>
+              >
+                We are a passionate software development
+                company helping startups, businesses,
+                and enterprises transform ideas into
+                scalable digital products.
+              </p>
 
-            <p
-              className="
+              <p
+                className="
               mt-6
               text-white/60
               leading-relaxed
             "
-            >
-              From custom web applications and mobile
-              apps to AI-powered solutions and cloud
-              infrastructure, we create technology
-              that drives growth and innovation.
-            </p>
+              >
+                From custom web applications and mobile
+                apps to AI-powered solutions and cloud
+                infrastructure, we create technology
+                that drives growth and innovation.
+              </p>
 
-            {/* Highlights */}
-            <div className="mt-10 space-y-4">
-              {highlights.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-3"
-                >
-                  <CheckCircle2
-                    className="text-violet-400"
-                    size={20}
-                  />
+              {/* Highlights */}
+              <div className="mt-10 space-y-4">
+                {highlights.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3"
+                  >
+                    <CheckCircle2
+                      className="text-violet-400"
+                      size={20}
+                    />
 
-                  <span className="text-white/80">
-                    {item}
-                  </span>
-                </div>
-              ))}
+                    <span className="text-white/80">
+                      {item}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
             </div>
 
-          </div>
+            {/* Right Side */}
+            <div>
 
-          {/* Right Side */}
-          <div>
-
-            <div
-              className="
+              <div
+                className="
               relative
               overflow-hidden
               rounded-3xl
@@ -150,10 +168,10 @@ export default function About() {
               backdrop-blur-xl
               p-10
             "
-            >
-              {/* Glow */}
-              <div
-                className="
+              >
+                {/* Glow */}
+                <div
+                  className="
                 absolute
                 inset-0
                 bg-linear-to-br
@@ -161,28 +179,28 @@ export default function About() {
                 via-transparent
                 to-cyan-500/10
               "
-              />
+                />
 
-              <div className="relative z-10">
+                <div className="relative z-10">
 
-                <h3
-                  className="
+                  <h3
+                    className="
                   text-2xl
                   font-bold
                   text-white
                   mb-8
                 "
-                >
-                  Why Choose Us?
-                </h3>
+                  >
+                    Why Choose Us?
+                  </h3>
 
-                <div className="grid gap-6">
+                  <div className="grid gap-6">
 
-                  {stats.map(
-                    ({ icon: Icon, value, label }) => (
-                      <div
-                        key={label}
-                        className="
+                    {stats.map(
+                      ({ icon: Icon, value, label }) => (
+                        <div
+                          key={label}
+                          className="
                         flex
                         items-center
                         gap-5
@@ -191,9 +209,9 @@ export default function About() {
                         bg-white/3
                         border border-white/5
                       "
-                      >
-                        <div
-                          className="
+                        >
+                          <div
+                            className="
                           w-14 h-14
                           rounded-2xl
                           flex items-center
@@ -202,45 +220,45 @@ export default function About() {
                           from-violet-600
                           to-cyan-500
                         "
-                        >
-                          <Icon
-                            size={24}
-                            className="text-white"
-                          />
-                        </div>
+                          >
+                            <Icon
+                              size={24}
+                              className="text-white"
+                            />
+                          </div>
 
-                        <div>
-                          <h4
-                            className="
+                          <div>
+                            <h4
+                              className="
                             text-3xl
                             font-bold
                             text-white
                           "
-                          >
-                            {value}
-                          </h4>
+                            >
+                              {value}
+                            </h4>
 
-                          <p className="text-white/60">
-                            {label}
-                          </p>
+                            <p className="text-white/60">
+                              {label}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    )
-                  )}
+                      )
+                    )}
+
+                  </div>
 
                 </div>
-
               </div>
+
             </div>
 
           </div>
 
         </div>
-
-      </div>
-    </section>
-    <section className="justify-center flex">
-       {/* Circular Gallery */}
+      </section>
+      <section className="justify-center flex">
+        {/* Circular Gallery */}
         <div className="flex justify-center" style={{ height: '600px', width: '80%' }}>
           <CircularGallery
             bend={1}
@@ -254,7 +272,31 @@ export default function About() {
             scrollSpeed={1.5}
           />
         </div>
-    </section>
+      </section>
+      <section>
+        <div style={{ padding: '115px', height: '200px', position: 'relative', overflow: 'hidden' }}>
+          {/* Basic horizontal loop */}
+          <LogoLoop
+            logos={techLogos}
+            speed={70}
+            direction="left"
+            logoHeight={70}
+            gap={60}
+            hoverSpeed={30}
+            scaleOnHover
+            // fadeOut
+            fadeOutColor="#ffffff"
+            ariaLabel="Technology partners"
+            useCustomRender={true}
+          />
+
+          {/* Vertical loop with deceleration on hover */}
+          {/* <LogoLoop
+            logos={techLogos}
+            useCustomRender={false}
+          /> */}
+        </div>
+      </section>
     </section>
   );
 }

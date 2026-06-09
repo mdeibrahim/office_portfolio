@@ -4,12 +4,16 @@ import {
   MapPin,
   Send,
 } from "lucide-react";
+import StaticNetworkBG from "../../assets/images/Nav/image.png";
+
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-32 px-6 lg:px-8"
+      className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
+                  bg-no-repeat bg-blend-overlay bg-[#020132]"
+                style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
       <div className="max-w-7xl mx-auto">
 

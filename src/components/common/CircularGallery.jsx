@@ -310,11 +310,14 @@ class Media {
     });
     const img = new Image();
     img.crossOrigin = 'anonymous';
-    img.src = this.image;
     img.onload = () => {
       texture.image = img;
       this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
     };
+    img.onerror = () => {
+      console.error('CircularGallery: failed to load image', this.image);
+    };
+    img.src = this.image;
   }
   createMesh() {
     this.plane = new Mesh(this.gl, {
