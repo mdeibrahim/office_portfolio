@@ -1,115 +1,84 @@
-import {
-  Globe,
-  Smartphone,
-  Palette,
-  Cloud,
-  Brain,
-  ShieldCheck,
-} from "lucide-react";
 import StaticNetworkBG from "../../assets/images/Nav/image.png";
+import MagicBento from '../common/MagicBento';
 
 
-const services = [
-  {
-    icon: Globe,
-    title: "Web Development",
-    description:
-      "Modern, scalable and high-performance web applications using React, Next.js, Django and Node.js.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile App Development",
-    description:
-      "Cross-platform mobile applications for Android and iOS using Flutter and React Native.",
-  },
-  {
-    icon: Palette,
-    title: "UI / UX Design",
-    description:
-      "Beautiful and user-focused interfaces that improve engagement and conversion.",
-  },
-  {
-    icon: Cloud,
-    title: "Cloud & DevOps",
-    description:
-      "AWS, Docker, CI/CD pipelines and cloud infrastructure optimization.",
-  },
-  {
-    icon: Brain,
-    title: "AI Solutions",
-    description:
-      "AI-powered automation, chatbots, recommendation systems and intelligent workflows.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Maintenance & Support",
-    description:
-      "Continuous monitoring, updates and long-term support for your business.",
-  },
-];
-
-function ServiceCard({ icon: Icon, title, description }) {
+function ServiceCard() {
   return (
-    <div
-      className="
-      group
-      relative
-      overflow-hidden
-      rounded-3xl
-      border border-white/10
-      bg-white/[0.03]
-      backdrop-blur-xl
-      p-8
-      transition-all
-      duration-300
-      hover:-translate-y-2
-      hover:border-violet-500/40
-      hover:shadow-[0_0_40px_rgba(139,92,246,0.15)]
-    "
-    >
-      {/* glow */}
-      <div
-        className="
-        absolute
-        inset-0
-        opacity-0
-        group-hover:opacity-100
-        transition-opacity
-        duration-500
-        bg-gradient-to-br
-        from-violet-500/10
-        via-transparent
-        to-cyan-500/10
-      "
-      />
+    // <div
+    //   className="
+    //   group
+    //   relative
+    //   overflow-hidden
+    //   rounded-3xl
+    //   border border-white/10
+    //   bg-white/[0.03]
+    //   backdrop-blur-xl
+    //   p-8
+    //   transition-all
+    //   duration-300
+    //   hover:-translate-y-2
+    //   hover:border-violet-500/40
+    //   hover:shadow-[0_0_40px_rgba(139,92,246,0.15)]
+    // "
+    // >
+    //   {/* glow */}
+    //   <div
+    //     className="
+    //     absolute
+    //     inset-0
+    //     opacity-0
+    //     group-hover:opacity-100
+    //     transition-opacity
+    //     duration-500
+    //     bg-gradient-to-br
+    //     from-violet-500/10
+    //     via-transparent
+    //     to-cyan-500/10
+    //   "
+    //   />
 
-      <div className="relative z-10">
-        <div
-          className="
-          w-14
-          h-14
-          rounded-2xl
-          flex
-          items-center
-          justify-center
-          bg-gradient-to-br
-          from-violet-600
-          to-cyan-500
-          mb-6
-        "
-        >
-          <Icon size={28} className="text-white" />
-        </div>
+    //   <div className="relative z-10">
+    //     <div
+    //       className="
+    //       w-14
+    //       h-14
+    //       rounded-2xl
+    //       flex
+    //       items-center
+    //       justify-center
+    //       bg-gradient-to-br
+    //       from-violet-600
+    //       to-cyan-500
+    //       mb-6
+    //     "
+    //     >
+    //       <Icon size={28} className="text-white" />
+    //     </div>
 
-        <h3 className="text-white text-xl font-bold mb-4">
-          {title}
-        </h3>
+    //     <h3 className="text-white text-xl font-bold mb-4">
+    //       {title}
+    //     </h3>
 
-        <p className="text-white/60 leading-relaxed">
-          {description}
-        </p>
-      </div>
-    </div>
+    //     <p className="text-white/60 leading-relaxed">
+    //       {description}
+    //     </p>
+    //   </div>
+    // </div>
+
+    <MagicBento 
+  textAutoHide={true}
+  enableStars
+  enableSpotlight
+  enableBorderGlow={true}
+  enableTilt={true}
+  enableMagnetism={false}
+  clickEffect
+  spotlightRadius={700}
+  particleCount={50}
+  glowColor="132, 0, 255"
+  disableAnimations={false}
+/>
+
   );
 }
 
@@ -117,7 +86,7 @@ export default function Service() {
   return (
     <section
       id="services"
-      className="section-padding bg-cover bg-center bg-fixed bg-overlay p-8
+      className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
         bg-no-repeat bg-blend-overlay bg-[#020132]"
       style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
@@ -178,18 +147,13 @@ export default function Service() {
         {/* Services Grid */}
         <div
           className="
-          grid
-          md:grid-cols-2
-          xl:grid-cols-3
+          justify-center
           gap-8
+          flex
+          flex-wrap
         "
         >
-          {services.map((service) => (
-            <ServiceCard
-              key={service.title}
-              {...service}
-            />
-          ))}
+          <ServiceCard />
         </div>
 
       </div>

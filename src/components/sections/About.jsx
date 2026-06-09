@@ -4,6 +4,9 @@ import {
   Rocket,
   Globe2,
 } from "lucide-react";
+import CircularGallery from '../common/CircularGallery';
+import StaticNetworkBG from "../../assets/images/Nav/image.png";
+
 
 const highlights = [
   "Experienced Software Engineers",
@@ -32,9 +35,11 @@ const stats = [
 
 export default function About() {
   return (
+    <section id="about" className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
+            bg-no-repeat bg-blend-overlay bg-[#020132]"
+          style={{ backgroundImage: `url(${StaticNetworkBG})` }}>
     <section
-      id="about"
-      className="relative py-32 px-6 lg:px-8"
+      className="relative px-6 lg:px-8"
     >
       <div className="max-w-7xl mx-auto">
 
@@ -72,7 +77,7 @@ export default function About() {
               <span
                 className="
                 block
-                bg-gradient-to-r
+                bg-linear-to-r
                 from-violet-400
                 via-cyan-400
                 to-violet-400
@@ -141,7 +146,7 @@ export default function About() {
               overflow-hidden
               rounded-3xl
               border border-white/10
-              bg-white/[0.03]
+              bg-white/3
               backdrop-blur-xl
               p-10
             "
@@ -151,7 +156,7 @@ export default function About() {
                 className="
                 absolute
                 inset-0
-                bg-gradient-to-br
+                bg-linear-to-br
                 from-violet-500/10
                 via-transparent
                 to-cyan-500/10
@@ -183,7 +188,7 @@ export default function About() {
                         gap-5
                         p-5
                         rounded-2xl
-                        bg-white/[0.03]
+                        bg-white/3
                         border border-white/5
                       "
                       >
@@ -193,7 +198,7 @@ export default function About() {
                           rounded-2xl
                           flex items-center
                           justify-center
-                          bg-gradient-to-br
+                          bg-linear-to-br
                           from-violet-600
                           to-cyan-500
                         "
@@ -233,6 +238,23 @@ export default function About() {
         </div>
 
       </div>
+    </section>
+    <section className="justify-center flex">
+       {/* Circular Gallery */}
+        <div className="flex justify-center" style={{ height: '600px', width: '80%' }}>
+          <CircularGallery
+            bend={1}
+            textColor="#ffffff"
+            borderRadius={0.07}
+            scrollEase={0.06}
+            // Optionally load a custom font for the labels.
+            // Accepts a stylesheet URL (e.g. Google Fonts) or a direct font file.
+            fontUrl=""
+            font="bold 30px Orbitron"
+            scrollSpeed={1.5}
+          />
+        </div>
+    </section>
     </section>
   );
 }

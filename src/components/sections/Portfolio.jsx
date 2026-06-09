@@ -5,6 +5,8 @@ import {
   ShoppingCart,
   Brain,
 } from "lucide-react";
+import StaticNetworkBG from "../../assets/images/Nav/image.png";
+
 
 const projects = [
   {
@@ -170,22 +172,20 @@ function ProjectCard({
 
 export default function Portfolio() {
   return (
-    <section
-      id="portfolio"
-      className="
-      relative
-      py-32
-      px-6
-      lg:px-8
-    "
-    >
-      <div className="max-w-7xl mx-auto">
+        <section
+          id="portfolio"
+         className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32 lg:px-8
+                 bg-no-repeat bg-blend-overlay bg-[#020132]"
+               style={{ backgroundImage: `url(${StaticNetworkBG})` }}
+        
+        >
+          
 
-        {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+            {/* Heading */}
+            <div className="text-center max-w-3xl mx-auto mb-20">
 
-          <span
-            className="
+              <span
+                className="
             inline-flex
             px-4
             py-2
@@ -196,22 +196,22 @@ export default function Portfolio() {
             text-sm
             font-medium
           "
-          >
-            Our Portfolio
-          </span>
+              >
+                Our Portfolio
+              </span>
 
-          <h2
-            className="
+              <h2
+                className="
             mt-6
             text-4xl
             md:text-6xl
             font-extrabold
             text-white
           "
-          >
-            Projects That
-            <span
-              className="
+              >
+                Projects That
+                <span
+                  className="
               block
               bg-gradient-to-r
               from-violet-400
@@ -220,35 +220,35 @@ export default function Portfolio() {
               bg-clip-text
               text-transparent
             "
+                >
+                  Deliver Results
+                </span>
+              </h2>
+
+              <p className="mt-6 text-lg text-white/60">
+                We build software products that solve real business
+                problems, improve efficiency, and accelerate growth.
+              </p>
+
+            </div>
+
+            {/* Portfolio Grid */}
+            <div
+              className="
+              grid
+              md:grid-cols-2
+              gap-8
+            "
             >
-              Deliver Results
-            </span>
-          </h2>
+              {projects.map((project) => (
+                <ProjectCard
+                  key={project.title}
+                  {...project}
+                />
+              ))}
+            </div>
 
-          <p className="mt-6 text-lg text-white/60">
-            We build software products that solve real business
-            problems, improve efficiency, and accelerate growth.
-          </p>
-
-        </div>
-
-        {/* Portfolio Grid */}
-        <div
-          className="
-          grid
-          md:grid-cols-2
-          gap-8
-        "
-        >
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.title}
-              {...project}
-            />
-          ))}
-        </div>
-
-      </div>
-    </section>
+          
+        </section>
   );
 }

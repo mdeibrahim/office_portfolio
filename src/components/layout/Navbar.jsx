@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react"; // ✅ Fix 2: import X icon
+import { Menu, X } from "lucide-react"; 
 import { useCallback, useEffect, useState } from "react";
 import NavLogo from "../../assets/images/Nav/f.png";
 import { navLinks } from "../../data/navLinks";
@@ -10,6 +10,7 @@ import Service from "../sections/Service";
 import PortfolioSection from "../sections/Portfolio";
 import AboutSection from "../sections/About";
 import Contact from "../sections/Contact";
+
 
 /* ─── animation variants ─────────────────────────────────────────────────── */
 
