@@ -278,7 +278,7 @@ export default function About() {
           {/* Basic horizontal loop */}
           <LogoLoop
             logos={techLogos}
-            speed={70}
+            speed={80}
             direction="left"
             logoHeight={70}
             gap={60}
