@@ -5,15 +5,15 @@ import {
   Send,
 } from "lucide-react";
 import StaticNetworkBG from "../../assets/images/Nav/image.png";
-
+import ElectricBorder from "../common/ElectricBorder";
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
+      className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32
                   bg-no-repeat bg-blend-overlay bg-[#020132]"
-                style={{ backgroundImage: `url(${StaticNetworkBG})` }}
+      style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
       <div className="max-w-7xl mx-auto">
 
@@ -68,34 +68,34 @@ export default function Contact() {
 
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-10">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-stretch">
 
-          {/* Left Side */}
-          <div
-            className="
-            rounded-3xl
-            border border-white/10
-            bg-white/3
-            backdrop-blur-xl
-            p-8
-          "
-          >
+          {/* Electric Border */}
+          <div className="relative h-full">
+            <ElectricBorder
+              color="#7df9ff"
+              speed={0.5}
+              chaos={0.05}
+              thickness={2}
+              className="h-full"
+              style={{ borderRadius: 16 }}
+            >
+              <div className="h-full rounded-2xl bg-transparent px-6 py-6 sm:px-8 sm:py-8">
+                <h3 className="mb-5 text-3xl font-bold text-white">
+                  Get In Touch
+                </h3>
 
-            <h3 className="text-3xl font-bold text-white mb-6">
-              Get In Touch
-            </h3>
+                <p className="mb-8 leading-relaxed text-white/60">
+                  Whether you're a startup looking to launch
+                  your first product or an enterprise seeking
+                  digital transformation, we're ready to help.
+                </p>
 
-            <p className="text-white/60 leading-relaxed mb-10">
-              Whether you're a startup looking to launch
-              your first product or an enterprise seeking
-              digital transformation, we're ready to help.
-            </p>
+                <div className="space-y-6">
 
-            <div className="space-y-6">
-
-              <div className="flex items-start gap-4">
-                <div
-                  className="
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="
                   w-12 h-12
                   rounded-xl
                   bg-linear-to-br
@@ -103,23 +103,23 @@ export default function Contact() {
                   to-cyan-500
                   flex items-center justify-center
                 "
-                >
-                  <Mail size={20} className="text-white" />
-                </div>
+                    >
+                      <Mail size={20} className="text-white" />
+                    </div>
 
-                <div>
-                  <p className="text-white font-medium">
-                    Email
-                  </p>
-                  <p className="text-white/60">
-                    hello@yourcompany.com
-                  </p>
-                </div>
-              </div>
+                    <div>
+                      <p className="font-medium text-white">
+                        Email
+                      </p>
+                      <p className="text-white/60">
+                        hello@yourcompany.com
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="flex items-start gap-4">
-                <div
-                  className="
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="
                   w-12 h-12
                   rounded-xl
                   bg-linear-to-br
@@ -127,23 +127,23 @@ export default function Contact() {
                   to-cyan-500
                   flex items-center justify-center
                 "
-                >
-                  <Phone size={20} className="text-white" />
-                </div>
+                    >
+                      <Phone size={20} className="text-white" />
+                    </div>
 
-                <div>
-                  <p className="text-white font-medium">
-                    Phone
-                  </p>
-                  <p className="text-white/60">
-                    +880 1234 567890
-                  </p>
-                </div>
-              </div>
+                    <div>
+                      <p className="font-medium text-white">
+                        Phone
+                      </p>
+                      <p className="text-white/60">
+                        +880 1234 567890
+                      </p>
+                    </div>
+                  </div>
 
-              <div className="flex items-start gap-4">
-                <div
-                  className="
+                  <div className="flex items-start gap-4">
+                    <div
+                      className="
                   w-12 h-12
                   rounded-xl
                   bg-linear-to-br
@@ -151,148 +151,148 @@ export default function Contact() {
                   to-cyan-500
                   flex items-center justify-center
                 "
-                >
-                  <MapPin size={20} className="text-white" />
-                </div>
+                    >
+                      <MapPin size={20} className="text-white" />
+                    </div>
 
-                <div>
-                  <p className="text-white font-medium">
-                    Location
-                  </p>
-                  <p className="text-white/60">
-                    Dhaka, Bangladesh
-                  </p>
+                    <div>
+                      <p className="font-medium text-white">
+                        Location
+                      </p>
+                      <p className="text-white/60">
+                        Dhaka, Bangladesh
+                      </p>
+                    </div>
+                  </div>
+
                 </div>
               </div>
-
-            </div>
-
-          </div>
+            </ElectricBorder>
+          </div> 
 
           {/* Right Side Form */}
-          <div
-            className="
-            rounded-3xl
-            border border-white/10
-            bg-white/3
-            backdrop-blur-xl
-            p-8
-          "
-          >
+          <div className="relative h-full">
+            <ElectricBorder
+              color="#7df9ff"
+              speed={1}
+              chaos={0.12}
+              thickness={2}
+              className="h-full"
+              style={{ borderRadius: 16 }}
+            >
+              <div className="h-full rounded-2xl bg-transparent px-6 py-6 sm:px-8 sm:py-8">
+                <form className="space-y-5">
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="Your Name"
+                      className="
+                        w-full
+                        rounded-xl
+                        border border-white/10
+                        bg-white/5
+                        px-4 py-3
+                        text-white
+                        placeholder:text-white/40
+                        focus:outline-none
+                        focus:border-violet-500
+                      "
+                    />
+                  </div>
 
-            <form className="space-y-5">
+                  <div>
+                    <input
+                      type="email"
+                      placeholder="Your Email"
+                      className="
+                        w-full
+                        rounded-xl
+                        border border-white/10
+                        bg-white/5
+                        px-4 py-3
+                        text-white
+                        placeholder:text-white/40
+                        focus:outline-none
+                        focus:border-violet-500
+                      "
+                    />
+                  </div>
 
-              <div>
-                <input
-                  type="text"
-                  placeholder="Your Name"
-                  className="
-                    w-full
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-3
-                    text-white
-                    placeholder:text-white/40
-                    focus:outline-none
-                    focus:border-violet-500
-                  "
-                />
+                  <div>
+                    <select
+                      className="
+                        w-full
+                        rounded-xl
+                        border border-white/10
+                        bg-white/5
+                        px-4 py-3
+                        text-white
+                        focus:outline-none
+                        focus:border-violet-500
+                      "
+                    >
+                      <option className="bg-slate-900">
+                        Web Development
+                      </option>
+
+                      <option className="bg-slate-900">
+                        Mobile App Development
+                      </option>
+
+                      <option className="bg-slate-900">
+                        UI / UX Design
+                      </option>
+
+                      <option className="bg-slate-900">
+                        AI Solutions
+                      </option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <textarea
+                      rows="6"
+                      placeholder="Tell us about your project..."
+                      className="
+                        w-full
+                        rounded-xl
+                        border border-white/10
+                        bg-white/5
+                        px-4 py-3
+                        text-white
+                        placeholder:text-white/40
+                        focus:outline-none
+                        focus:border-violet-500
+                        resize-none
+                      "
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="
+                      w-full
+                      flex
+                      items-center
+                      justify-center
+                      gap-2
+                      py-4
+                      rounded-xl
+                      bg-linear-to-r
+                      from-violet-600
+                      to-cyan-500
+                      text-white
+                      font-semibold
+                      transition
+                      hover:scale-[1.02]
+                    "
+                  >
+                    Send Message
+                    <Send size={18} />
+                  </button>
+                </form>
               </div>
-
-              <div>
-                <input
-                  type="email"
-                  placeholder="Your Email"
-                  className="
-                    w-full
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-3
-                    text-white
-                    placeholder:text-white/40
-                    focus:outline-none
-                    focus:border-violet-500
-                  "
-                />
-              </div>
-
-              <div>
-                <select
-                  className="
-                    w-full
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-3
-                    text-white
-                    focus:outline-none
-                    focus:border-violet-500
-                  "
-                >
-                  <option className="bg-slate-900">
-                    Web Development
-                  </option>
-
-                  <option className="bg-slate-900">
-                    Mobile App Development
-                  </option>
-
-                  <option className="bg-slate-900">
-                    UI / UX Design
-                  </option>
-
-                  <option className="bg-slate-900">
-                    AI Solutions
-                  </option>
-                </select>
-              </div>
-
-              <div>
-                <textarea
-                  rows="6"
-                  placeholder="Tell us about your project..."
-                  className="
-                    w-full
-                    rounded-xl
-                    border border-white/10
-                    bg-white/5
-                    px-4 py-3
-                    text-white
-                    placeholder:text-white/40
-                    focus:outline-none
-                    focus:border-violet-500
-                    resize-none
-                  "
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="
-                  w-full
-                  flex
-                  items-center
-                  justify-center
-                  gap-2
-                  py-4
-                  rounded-xl
-                  bg-linear-to-r
-                  from-violet-600
-                  to-cyan-500
-                  text-white
-                  font-semibold
-                  transition
-                  hover:scale-[1.02]
-                "
-              >
-                Send Message
-                <Send size={18} />
-              </button>
-
-            </form>
-
+            </ElectricBorder>
           </div>
 
         </div>

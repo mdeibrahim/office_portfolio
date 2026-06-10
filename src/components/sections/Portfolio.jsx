@@ -174,7 +174,7 @@ export default function Portfolio() {
   return (
         <section
           id="portfolio"
-         className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32 lg:px-8
+         className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32 lg:px-8
                  bg-no-repeat bg-blend-overlay bg-[#020132]"
                style={{ backgroundImage: `url(${StaticNetworkBG})` }}
         

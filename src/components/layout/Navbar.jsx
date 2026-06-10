@@ -156,29 +156,47 @@ export default function Navbar() {
   const scrolled = useScrolled(20);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // ✅ Fix 1 & 4: track active section via IntersectionObserver
   const [activeHref, setActiveHref] = useState("#home");
 
   useEffect(() => {
     const sectionIds = navLinks.map(({ href }) => href.replace("#", ""));
+    const headerOffset = 96;
+    let rafId = 0;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the entry that is most visible
-        const visible = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActiveHref(`#${visible.target.id}`);
-      },
-      { threshold: 0.4 },
-    );
+    const updateActiveSection = () => {
+      const scrollPosition = window.scrollY + headerOffset;
+      let nextActive = "#home";
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+      for (const id of sectionIds) {
+        const element = document.getElementById(id);
+        if (!element) continue;
 
-    return () => observer.disconnect();
+        const elementTop = window.scrollY + element.getBoundingClientRect().top;
+        if (scrollPosition >= elementTop - 1) {
+          nextActive = `#${id}`;
+        }
+      }
+
+      setActiveHref((current) => (current === nextActive ? current : nextActive));
+    };
+
+    const onScroll = () => {
+      if (rafId) return;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = 0;
+        updateActiveSection();
+      });
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
   }, []);
 
   const openMenu = useCallback(() => setMenuOpen(true), []);
@@ -250,7 +268,6 @@ export default function Navbar() {
         </div>
       </motion.header>
 
-      {/* ✅ Fix 5: wrap MobileMenu in AnimatePresence so it unmounts when closed */}
       <AnimatePresence>
         {menuOpen && (
           <MobileMenu
@@ -263,33 +280,17 @@ export default function Navbar() {
       </AnimatePresence>
 
       <main>
-        
-        <section
-          id="projects"
-          
-        >
-          
-          {/* {[{HeroSection}, {ServiceSection}, {ContactSection}].map((id) => (
-          <section
-            key={id}
-            id={id}
-            className="min-h-screen flex items-center justify-center border-b border-white/4"
-          >
-            <p className="text-white/20 text-4xl font-bold uppercase tracking-widest">
-              #{id}
-            </p>
-          </section>
-        ))} */}
-          <section id="home"><Hero /></section>
-
-          <section id="services"><Service /></section>
-
-          <section id="portfolio"><PortfolioSection /> </section>
-
-          <section id="about"><AboutSection /></section>
-
-          <section id="contact"><Contact /></section>
+        <section id="home" className="scroll-mt-24">
+          <Hero />
         </section>
+
+        <Service />
+
+        <PortfolioSection />
+
+        <AboutSection />
+
+        <Contact />
       </main>
     </>
   );

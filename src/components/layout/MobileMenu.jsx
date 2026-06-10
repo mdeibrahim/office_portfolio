@@ -144,7 +144,7 @@ export default function MobileMenu({ isOpen, onClose, activeHref, onActiveHrefCh
                     <motion.li key={href} variants={itemVariants}>
                       <a
                         href={href}
-                        onClick={handleLinkClick}
+                        onClick={() => handleLinkClick(href)}
                         aria-current={isActive ? "page" : undefined}
                         className={`
                           group flex items-center justify-between
@@ -173,7 +173,7 @@ export default function MobileMenu({ isOpen, onClose, activeHref, onActiveHrefCh
             <div className="px-4 py-6 border-t border-white/6">
               <a
                 href="#contact"
-                onClick={handleLinkClick}
+                onClick={() => handleLinkClick("#contact")}
                 className="
                   block w-full text-center
                   px-5 py-3 rounded-xl

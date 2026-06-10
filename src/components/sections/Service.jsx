@@ -86,7 +86,7 @@ export default function Service() {
   return (
     <section
       id="services"
-      className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32
+      className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32
         bg-no-repeat bg-blend-overlay bg-[#020132]"
       style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
