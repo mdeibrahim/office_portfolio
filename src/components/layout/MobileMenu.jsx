@@ -102,7 +102,7 @@ export default function MobileMenu({ isOpen, onClose, activeHref, onActiveHrefCh
             <div className="flex items-center justify-between px-6 pt-6 pb-4 border-b border-white/6">
               {/* Logo mark repeated in drawer */}
               <span className="flex items-center gap-2 select-none">
-                <span className="w-7 h-7 rounded-lg bg-linear-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
+                <span className="w-7 h-7 rounded-lg bg-linear-to-br from-violet-600 to-indigo-600 flex items-center justify-center">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
                     <path d="M2 12L7 2L12 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                     <path d="M4 8.5H10" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
@@ -121,7 +121,7 @@ export default function MobileMenu({ isOpen, onClose, activeHref, onActiveHrefCh
                 className="
                   w-9 h-9 rounded-lg flex items-center justify-center
                   text-white/50 hover:text-white
-                  hover:bg-white/8
+                  hover:bg-white/[0.08]
                   transition-colors duration-150
                   focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500
                 "
@@ -154,7 +154,7 @@ export default function MobileMenu({ isOpen, onClose, activeHref, onActiveHrefCh
                           focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500
                           ${isActive
                             ? "bg-violet-500/15 text-violet-300"
-                            : "text-white/60 hover:text-white hover:bg-white/6"
+                            : "text-white/60 hover:text-white hover:bg-white/[0.06]"
                           }
                         `}
                       >

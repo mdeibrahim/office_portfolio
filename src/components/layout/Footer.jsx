@@ -92,7 +92,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/65 transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-200/20 hover:bg-white/8 hover:text-white"
+                className="group inline-flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white/65 transition-all duration-200 hover:-translate-y-1 hover:border-indigo-700 hover:bg-white/8 hover:text-white"
                 >
                   <Icon size={18} className="transition-transform duration-200 group-hover:scale-110" />
                 </a>

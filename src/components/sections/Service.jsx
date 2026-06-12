@@ -86,14 +86,13 @@ export default function Service() {
   return (
     <section
       id="services"
-      className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32
-        bg-no-repeat bg-blend-overlay bg-[#020132]"
+      className="relative scroll-mt-24 overflow-hidden bg-[#020132] bg-cover bg-center bg-scroll bg-no-repeat bg-blend-overlay px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 md:bg-fixed"
       style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
 
           <span
             className="

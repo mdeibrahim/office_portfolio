@@ -1,15 +1,16 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react"; 
-import { useCallback, useEffect, useState } from "react";
-import NavLogo from "../../assets/images/Nav/f.png";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
+import NavLogo from "../../assets/images/Nav/logo3.png";
 import { navLinks } from "../../data/navLinks";
 import { useScrolled } from "../../hooks/useScrolled";
 import MobileMenu from "./MobileMenu";
-import Hero from "../sections/Hero";
-import Service from "../sections/Service";
-import PortfolioSection from "../sections/Portfolio";
-import AboutSection from "../sections/About";
-import Contact from "../sections/Contact";
+
+const Hero = lazy(() => import("../sections/Hero"));
+const Service = lazy(() => import("../sections/Service"));
+const PortfolioSection = lazy(() => import("../sections/Portfolio"));
+const AboutSection = lazy(() => import("../sections/About"));
+const Contact = lazy(() => import("../sections/Contact"));
 
 
 /* ─── animation variants ─────────────────────────────────────────────────── */
@@ -43,7 +44,7 @@ function Logo() {
       <img
         src={NavLogo}
         alt="ApexLabs logo"
-        className="w-30 h-30 object-contain" // ✅ Fix 3: was w-28 h-28, now fits in h-16 navbar
+        className="h-20 w-20 object-contain sm:h-20 sm:w-20"
       />
     </a>
   );
@@ -115,6 +116,20 @@ function CTAButton() {
   );
 }
 
+function SectionFallback({ id, minHeight = "min-h-[70vh]" }) {
+  return (
+    <section
+      id={id}
+      className={`${minHeight} bg-[#020132] px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32`}
+      aria-busy="true"
+    >
+      <div className="mx-auto flex max-w-7xl items-center justify-center text-sm text-white/40">
+        Loading section...
+      </div>
+    </section>
+  );
+}
+
 /* ─── Hamburger Button ───────────────────────────────────────────────────── */
 
 function HamburgerButton({ onClick, isOpen }) {
@@ -129,7 +144,7 @@ function HamburgerButton({ onClick, isOpen }) {
       className="
         navbar-mobile-toggle md:hidden
         w-9 h-9 rounded-lg flex items-center justify-center
-        text-white/60 hover:text-white hover:bg-white/8
+        text-white/60 hover:text-white hover:bg-white/[0.08]
         transition-colors duration-150
         focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500
       "
@@ -281,16 +296,26 @@ export default function Navbar() {
 
       <main>
         <section id="home" className="scroll-mt-24">
-          <Hero />
+          <Suspense fallback={<SectionFallback id="home" minHeight="min-h-screen" />}>
+            <Hero />
+          </Suspense>
         </section>
 
-        <Service />
+        <Suspense fallback={<SectionFallback id="services" />}>
+          <Service />
+        </Suspense>
 
-        <PortfolioSection />
+        <Suspense fallback={<SectionFallback id="portfolio" />}>
+          <PortfolioSection />
+        </Suspense>
 
-        <AboutSection />
+        <Suspense fallback={<SectionFallback id="about" />}>
+          <AboutSection />
+        </Suspense>
 
-        <Contact />
+        <Suspense fallback={<SectionFallback id="contact" />}>
+          <Contact />
+        </Suspense>
       </main>
     </>
   );

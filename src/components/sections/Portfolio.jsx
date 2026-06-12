@@ -58,40 +58,120 @@ function ProjectCard({
       overflow-hidden
       rounded-3xl
       border border-white/10
-      bg-white/3
+      bg-white/5
       backdrop-blur-xl
+      cursor-pointer
       transition-all
       duration-500
       hover:-translate-y-2
-      hover:border-violet-500/40
-      hover:shadow-[0_0_50px_rgba(139,92,246,0.15)]
+      hover:border-cyan-400/40
+      hover:shadow-[0_0_70px_rgba(34,211,238,0.16)]
     "
     >
+      <div
+        className="
+        pointer-events-none
+        absolute
+        inset-0
+        bg-linear-to-br
+        from-violet-500/15
+        via-cyan-500/10
+        to-fuchsia-500/10
+        opacity-70
+        transition-opacity
+        duration-500
+        group-hover:opacity-100
+      "
+      />
+
+      <div
+        className="
+        pointer-events-none
+        absolute
+        -inset-px
+        rounded-3xl
+        bg-linear-to-r
+        from-transparent
+        via-white/10
+        to-transparent
+        opacity-0
+        blur-2xl
+        transition-opacity
+        duration-700
+        group-hover:opacity-100
+      "
+      />
+
       {/* Project Preview Area */}
       <div
         className="
+        relative
         h-64
         flex
         items-center
         justify-center
+        overflow-hidden
         bg-linear-to-br
-        from-violet-500/10
-        via-cyan-500/5
-        to-transparent
+        from-violet-500/15
+        via-cyan-500/10
+        to-fuchsia-500/10
       "
       >
+        <div
+          className="
+          absolute
+          inset-0
+          bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.16),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.16),transparent_35%)]
+        "
+        />
+
+        <div
+          className="
+          absolute
+          h-56
+          w-56
+          rounded-full
+          bg-cyan-400/20
+          blur-3xl
+          transition-transform
+          duration-700
+          group-hover:scale-125
+        "
+        />
+
+        <div
+          className="
+          absolute
+          inset-x-10
+          bottom-10
+          h-px
+          bg-linear-to-r
+          from-transparent
+          via-white/35
+          to-transparent
+          opacity-70
+          transition-all
+          duration-700
+          group-hover:via-cyan-300/70
+        "
+        />
+
         <Icon
           size={80}
           className="
-            text-violet-400
-            transition-transform
+            relative
+            z-10
+            text-cyan-300
+            drop-shadow-[0_0_18px_rgba(34,211,238,0.45)]
+            transition-all
             duration-500
             group-hover:scale-110
+            group-hover:-rotate-6
           "
         />
       </div>
 
-      <div className="p-8">
+      <div className="relative z-10 p-8">
 
         <span
           className="
@@ -102,15 +182,19 @@ function ProjectCard({
           text-xs
           font-medium
           border
-          border-violet-500/20
-          bg-violet-500/10
-          text-violet-300
+          border-cyan-400/20
+          bg-cyan-400/10
+          text-cyan-200
+          transition-all
+          duration-300
+          group-hover:border-cyan-300/40
+          group-hover:bg-cyan-300/15
         "
         >
           {category}
         </span>
 
-        <h3 className="mt-5 text-2xl font-bold text-white">
+        <h3 className="mt-5 text-2xl font-bold text-white transition-transform duration-300 group-hover:translate-x-1">
           {title}
         </h3>
 
@@ -124,13 +208,18 @@ function ProjectCard({
             <span
               key={item}
               className="
+              transition-all
+              duration-300
               px-3
               py-1
               rounded-lg
-              bg-white/5
+              bg-white/[0.06]
               border border-white/10
-              text-white/70
+              text-white/75
               text-sm
+              group-hover:border-white/20
+              group-hover:bg-white/10
+              group-hover:translate-y-[-1px]
             "
             >
               {item}
@@ -145,9 +234,12 @@ function ProjectCard({
             inline-flex
             items-center
             gap-2
-            text-violet-400
-            hover:text-violet-300
+            text-cyan-300
+            hover:text-white
             font-medium
+            transition-all
+            duration-300
+            group-hover:translate-x-1
           "
           >
             View Project
@@ -156,14 +248,43 @@ function ProjectCard({
 
           <button
             className="
-            text-white/50
+            rounded-full
+            border
+            border-white/10
+            bg-white/5
+            px-4
+            py-2
+            text-white/55
             hover:text-white
-            transition-colors
+            hover:border-white/20
+            hover:bg-white/10
+            transition-all
+            duration-300
           "
           >
             Case Study
           </button>
         </div>
+
+        <div
+          className="
+          pointer-events-none
+          absolute
+          inset-x-8
+          bottom-4
+          h-1
+          rounded-full
+          bg-linear-to-r
+          from-violet-500/0
+          via-cyan-400/0
+          to-fuchsia-500/0
+          transition-all
+          duration-500
+          group-hover:from-violet-500/70
+          group-hover:via-cyan-400/80
+          group-hover:to-fuchsia-500/70
+        "
+        />
 
       </div>
     </div>
@@ -174,15 +295,14 @@ export default function Portfolio() {
   return (
         <section
           id="portfolio"
-         className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32 lg:px-8
-                 bg-no-repeat bg-blend-overlay bg-[#020132]"
+         className="relative scroll-mt-24 overflow-hidden bg-[#020132] bg-cover bg-center bg-scroll bg-no-repeat bg-blend-overlay px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 md:bg-fixed"
                style={{ backgroundImage: `url(${StaticNetworkBG})` }}
         
         >
           
 
             {/* Heading */}
-            <div className="text-center max-w-3xl mx-auto mb-20">
+            <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
 
               <span
                 className="

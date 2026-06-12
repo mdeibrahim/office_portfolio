@@ -55,12 +55,12 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32 bg-no-repeat bg-blend-overlay bg-[#020132]"
+      className="relative scroll-mt-24 overflow-hidden bg-[#020132] bg-cover bg-center bg-scroll bg-no-repeat bg-blend-overlay px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 md:bg-fixed"
       style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
       <div className="mx-auto max-w-7xl">
 
-        <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
 
           {/* Left Content */}
           <div>
@@ -149,8 +149,8 @@ export default function About() {
           {/* Right Side */}
           <div>
 
-            <div
-              className="
+              <div
+                className="
               relative
               overflow-hidden
               rounded-3xl
@@ -208,7 +208,7 @@ export default function About() {
                           justify-center
                           bg-linear-to-br
                           from-violet-600
-                          to-cyan-500
+                          to-indigo-600
                         "
                       >
                         <Icon size={24} className="text-white" />
@@ -236,7 +236,7 @@ export default function About() {
           </div>
         </div>
 
-        <section className="mt-20">
+        <section className="mt-24">
           {/* Circular Gallery */}
           <div className="mx-auto h-[clamp(20rem,55vw,36rem)] w-full max-w-6xl">
             <CircularGallery
@@ -252,7 +252,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="relative mt-16 overflow-hidden py-10 sm:py-14 lg:py-16">
+        <section className="relative mt-20 overflow-hidden py-10 sm:py-14 lg:py-16">
           <div className="mx-auto w-full max-w-6xl">
             {/* Basic horizontal loop */}
             <LogoLoop

@@ -11,14 +11,13 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="section-padding scroll-mt-24 bg-cover bg-center bg-fixed bg-overlay px-6 py-32
-                  bg-no-repeat bg-blend-overlay bg-[#020132]"
+      className="relative scroll-mt-24 overflow-hidden bg-[#020132] bg-cover bg-center bg-scroll bg-no-repeat bg-blend-overlay px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 md:bg-fixed"
       style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
       <div className="max-w-7xl mx-auto">
 
         {/* Section Heading */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
 
           <span
             className="
@@ -100,7 +99,7 @@ export default function Contact() {
                   rounded-xl
                   bg-linear-to-br
                   from-violet-600
-                  to-cyan-500
+                  to-indigo-600
                   flex items-center justify-center
                 "
                     >
@@ -124,7 +123,7 @@ export default function Contact() {
                   rounded-xl
                   bg-linear-to-br
                   from-violet-600
-                  to-cyan-500
+                  to-indigo-600
                   flex items-center justify-center
                 "
                     >
@@ -148,7 +147,7 @@ export default function Contact() {
                   rounded-xl
                   bg-linear-to-br
                   from-violet-600
-                  to-cyan-500
+                  to-indigo-600
                   flex items-center justify-center
                 "
                     >
@@ -174,8 +173,8 @@ export default function Contact() {
           <div className="relative h-full">
             <ElectricBorder
               color="#7df9ff"
-              speed={1}
-              chaos={0.12}
+              speed={0.5}
+              chaos={0.05}
               thickness={2}
               className="h-full"
               style={{ borderRadius: 16 }}
@@ -280,7 +279,7 @@ export default function Contact() {
                       rounded-xl
                       bg-linear-to-r
                       from-violet-600
-                      to-cyan-500
+                      to-indigo-600
                       text-white
                       font-semibold
                       transition

@@ -2,7 +2,8 @@ import StaticNetworkBG from "../../assets/images/Nav/image.png";
 export default function HeroBackground() {
   return (
     <section
-      className="section-padding bg-cover bg-center bg-fixed bg-overlay px-6 py-32 bg-no-repeat bg-blend-overlay bg-[#020132]" style={{ backgroundImage: `url(${StaticNetworkBG})` }}
+      className="relative overflow-hidden bg-[#020132] bg-cover bg-center bg-scroll bg-no-repeat bg-blend-overlay px-4 py-20 sm:px-6 sm:py-24 lg:px-8 lg:py-32 md:bg-fixed"
+      style={{ backgroundImage: `url(${StaticNetworkBG})` }}
     >
     </section>
   );
